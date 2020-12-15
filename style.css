@@ -18,8 +18,11 @@ header {
     background-color: blue;
     color: white;
 }
+#uv-index {
+    font-size: medium;
+}
 .uv-good {
-    color: green:
+    color: green;
 }
 .uv-poor {
     color: yellow;
