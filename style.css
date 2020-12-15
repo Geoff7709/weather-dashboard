@@ -18,4 +18,19 @@ header {
     background-color: blue;
     color: white;
 }
+.uv-good {
+    color: green:
+}
+.uv-poor {
+    color: yellow;
+}
+.uv-bad {
+    color: orangered;
+}
+.uv-danger {
+    color: red;
+}
+.stay-inside {
+    color: purple;
+}
  
