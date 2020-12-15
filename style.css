@@ -1,0 +1,21 @@
+header {
+    text-align: center;
+    background-color: blue;
+    color: black;
+}
+#search-panel {
+    background-color: lightsteelblue;
+}
+.form-control {
+  display: block;  
+  width: 200px;
+  float: left;  
+}
+#search {
+    width: auto;
+}
+.five-day-cast {
+    background-color: blue;
+    color: white;
+}
+ 
