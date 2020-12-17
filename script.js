@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-    console.log($("input").val())
     
     var searches = JSON.parse(localStorage.getItem('searches')) || [];
     
@@ -17,25 +16,13 @@ $( document ).ready(function() {
         }
     }
     renderHistory()
-    console.log($(searches).get(-1))
+    
     function setPage() {
         var lastSearch = $(searches).get(-1);
     
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + lastSearch + "&units=imperial&APPID=15dbd29d44cd5bae9c5c65cfeba9be16"
         
         var queryFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + lastSearch + "&units=imperial&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
-
-                
-        // function setHistory() {
-        //     var newSearch = query_param
-                    
-        //     if (newSearch !== "") {
-        //         searches.push(newSearch)
-        //         query_param = null
-        //         localStorage.setItem("searches", JSON.stringify(searches))
-        //     }
-        // }
-        // setHistory();
 
         $.ajax({
         url: queryURL,
@@ -132,7 +119,6 @@ $( document ).ready(function() {
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + query_param + "&units=imperial&APPID=15dbd29d44cd5bae9c5c65cfeba9be16"
         
         var queryFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + query_param + "&units=imperial&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
-
                 
         function setHistory() {
             var newSearch = query_param
@@ -144,6 +130,7 @@ $( document ).ready(function() {
             }
         }
         setHistory();
+
 
         $.ajax({
         url: queryURL,
