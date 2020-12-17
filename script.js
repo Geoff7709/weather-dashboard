@@ -21,9 +21,9 @@ $( document ).ready(function() {
     function setPage() {
         var lastSearch = $(searches).get(-1);
     
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + lastSearch + "&units=imperial&APPID=15dbd29d44cd5bae9c5c65cfeba9be16"
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + lastSearch + "&units=imperial&APPID=15dbd29d44cd5bae9c5c65cfeba9be16"
         
-        var queryFiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + lastSearch + "&units=imperial&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
+        var queryFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + lastSearch + "&units=imperial&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
 
                 
         // function setHistory() {
@@ -46,12 +46,12 @@ $( document ).ready(function() {
 
             var locusLat = weather.coord.lat
 
-            var uviURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + locusLat + "&lon=" + locusLon + "&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
+            var uviURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + locusLat + "&lon=" + locusLon + "&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
 
             $("#search-city").text(weather.name + " (" + moment().format("MMMM Do") + ")")
             $("#temp").text("Temperature: " + Math.round(weather.main.temp) + "F")
             $("#humidity").text("Humidity: " + weather.main.humidity + "%")
-            $("#weather-icon").attr({"src": "http://openweathermap.org/img/w/" + weather.weather[0].icon + ".png", "alt": "Weather Icon"})
+            $("#weather-icon").attr({"src": "https://openweathermap.org/img/w/" + weather.weather[0].icon + ".png", "alt": "Weather Icon"})
             
             $.ajax({
                 url: uviURL,
@@ -116,7 +116,7 @@ $( document ).ready(function() {
                 
                 daysDisplay[i].text(moment(arrayOfDays[i].dt_txt).format("M/D"))
                 
-                iconDisplay[i].attr({"src": "http://openweathermap.org/img/w/" + arrayOfDays[i].weather[0].icon + ".png", "alt": "Weather Icon"})
+                iconDisplay[i].attr({"src": "https://openweathermap.org/img/w/" + arrayOfDays[i].weather[0].icon + ".png", "alt": "Weather Icon"})
 
                 tempDisplay[i].text("Temperature: " + Math.round(arrayOfDays[i].main.temp) + "F")
 
@@ -129,9 +129,9 @@ $( document ).ready(function() {
     $("#search").on('click', function() {
         var query_param = $("input").val();
     
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + query_param + "&units=imperial&APPID=15dbd29d44cd5bae9c5c65cfeba9be16"
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + query_param + "&units=imperial&APPID=15dbd29d44cd5bae9c5c65cfeba9be16"
         
-        var queryFiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + query_param + "&units=imperial&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
+        var queryFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + query_param + "&units=imperial&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
 
                 
         function setHistory() {
@@ -154,12 +154,12 @@ $( document ).ready(function() {
 
             var locusLat = weather.coord.lat
 
-            var uviURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + locusLat + "&lon=" + locusLon + "&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
+            var uviURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + locusLat + "&lon=" + locusLon + "&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
 
             $("#search-city").text(weather.name + " (" + moment().format("MMMM Do") + ")")
             $("#temp").text("Temperature: " + Math.round(weather.main.temp) + "F")
             $("#humidity").text("Humidity: " + weather.main.humidity + "%")
-            $("#weather-icon").attr({"src": "http://openweathermap.org/img/w/" + weather.weather[0].icon + ".png", "alt": "Weather Icon"})
+            $("#weather-icon").attr({"src": "https://openweathermap.org/img/w/" + weather.weather[0].icon + ".png", "alt": "Weather Icon"})
             
             $.ajax({
                 url: uviURL,
@@ -224,7 +224,7 @@ $( document ).ready(function() {
                 
                 daysDisplay[i].text(moment(arrayOfDays[i].dt_txt).format("M/D"))
                 
-                iconDisplay[i].attr({"src": "http://openweathermap.org/img/w/" + arrayOfDays[i].weather[0].icon + ".png", "alt": "Weather Icon"})
+                iconDisplay[i].attr({"src": "https://openweathermap.org/img/w/" + arrayOfDays[i].weather[0].icon + ".png", "alt": "Weather Icon"})
 
                 tempDisplay[i].text("Temperature: " + Math.round(arrayOfDays[i].main.temp) + "F")
 
