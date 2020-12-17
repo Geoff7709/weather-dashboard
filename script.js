@@ -1,12 +1,41 @@
 $( document ).ready(function() {
-    $("#search").on('click', function(){
-        var query_param = $(this).prev().val();
+    console.log($("input").val())
+    
+    var searches = JSON.parse(localStorage.getItem('searches')) || [];
+    
+    var searchHistory = $("#search-history")
+    
+    
+    function renderHistory() {
+        searchHistory.empty();
+        
+        for (var i = 0; i < searches.length; i++) {
+            var searchItem = $("<li>");
+            
+            searchItem.text(searches[i]);
+            searchHistory.append(searchItem);
+        }
+    }
+    renderHistory()
+            
+    $("#search").on('click', function() {
+         var query_param = $("input").val();
+     
+         var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + query_param + "&units=imperial&APPID=15dbd29d44cd5bae9c5c65cfeba9be16"
+         
+         var queryFiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + query_param + "&units=imperial&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
 
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + query_param + "&units=imperial&APPID=15dbd29d44cd5bae9c5c65cfeba9be16"
-
-        var queryFiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + query_param + "&units=imperial&appid=15dbd29d44cd5bae9c5c65cfeba9be16"
-
-        localStorage.setItem("Query", $(this).prev().val())
+                
+        function setHistory() {
+            var newSearch = query_param
+                    
+            if (newSearch !== "") {
+                searches.push(newSearch)
+                query_param = null
+                localStorage.setItem("searches", JSON.stringify(searches))
+            }
+        }
+        setHistory();
 
         $.ajax({
         url: queryURL,
