@@ -50,16 +50,16 @@ $( document ).ready(function() {
                 if (uvIndex < 3) {
                     uvDisplay.attr("class", "uv-good")
                 }
-                else if (2 < uvIndex < 6) {
+                else if (uvIndex < 6) {
                     uvDisplay.attr("class", "uv-poor")
                 }
-                else if (5 < uvIndex < 8) {
+                else if (uvIndex < 8) {
                     uvDisplay.attr("class", "uv-bad")
                 }
-                else if (7 < uvIndex < 11) {
+                else if (uvIndex < 11) {
                     uvDisplay.attr("class", "uv-danger")
                 }
-                else if (uvIndex > 10) {
+                else  {
                     uvDisplay.attr("class", "stay-inside")
                 }
             })
@@ -158,16 +158,16 @@ $( document ).ready(function() {
                 if (uvIndex < 3) {
                     uvDisplay.attr("class", "uv-good")
                 }
-                else if (2 < uvIndex < 6) {
+                else if (uvIndex < 6) {
                     uvDisplay.attr("class", "uv-poor")
                 }
-                else if (5 < uvIndex < 8) {
+                else if (uvIndex < 8) {
                     uvDisplay.attr("class", "uv-bad")
                 }
-                else if (7 < uvIndex < 11) {
+                else if (uvIndex < 11) {
                     uvDisplay.attr("class", "uv-danger")
                 }
-                else if (uvIndex > 10) {
+                else  {
                     uvDisplay.attr("class", "stay-inside")
                 }
             })
