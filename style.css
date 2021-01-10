@@ -2,6 +2,7 @@ header {
     text-align: center;
     background-color: blue;
     color: black;
+    padding: 10px;
 }
 #search-panel {
     background-color: lightsteelblue;
@@ -39,5 +40,8 @@ header {
 }
 .stay-inside {
     color: purple;
+}
+.card-body {
+    border-radius: 7px;
 }
  
