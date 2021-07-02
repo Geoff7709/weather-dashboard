@@ -18,6 +18,11 @@ $(document).ready(function () {
             searchRow.attr("class", "row")
             searchItem.attr("class", "history")
             searchItem.text(searches[i])
+            searchItem.hover(function() {
+                $(this).attr("class", "history active")
+            }, function() {
+                $(this).attr("class", "history")
+            })
             searchItem.on('click', function () {
                 console.log($(this).text())
                 var query_param = $(this).text();
@@ -36,13 +41,6 @@ $(document).ready(function () {
                     } else {
                         query_param = null
                     }
-                    // for (var i = 0; i < searches.length; i++) {
-                    //     if (newSearch !== "" && newSearch !== searches[i]) {
-                    //         searches.push(newSearch)
-                            query_param = null
-                            localStorage.setItem("searches", JSON.stringify(searches))
-                    //     }
-                    // }
                 }
                 setHistory();
 

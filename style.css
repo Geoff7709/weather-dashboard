@@ -19,6 +19,9 @@ header {
     font-size: x-large;
     font-weight: 500;
 }
+.active {
+    color:darkblue
+}
 .five-day-cast {
     background-color: blue;
     color: white;
